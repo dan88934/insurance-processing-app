@@ -1,0 +1,46 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Place an order
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row pb-5">
+		<div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+		<h1 class="pt-5 pb-2">Fernwood Courier Services</h1>
+        <br>
+        <h2>Order details</h2>
+        <p><a href="{{ url_for('index') }}">Go back to home page.</a></p>
+
+        <p><strong>Sender name:</strong> {{ order.sender_name }}</p>
+        <p><strong>Sender address:</strong> {{ order.sender_address  }}</p>
+        <p><strong>Sender city:</strong> {{ order.sender_city }}</p>
+        <p><strong>Sender country:</strong> {{ order.sender_country }}</p>
+        <p><strong>Recipient name:</strong> {{ order.recipient_name }}</p>
+        <p><strong>Recipient address:</strong> {{ order.recipient_address }}</p>
+        <p><strong>Recipient city:</strong> {{ order.recipient_city }}</p>
+        <p><strong>Recipient country:</strong> {{ order.recipient_country }}</p>
+        <p><strong>Package value:</strong> {{ order.package_value }}</p>
+        <p><strong>Contents declaration:</strong> {{order.contents_declaration }}</p>
+        <p><strong>Despatch date:</strong> {{ order.despatch_date }}</p>
+        <p><strong>Includes insurance?</strong> (y/n): {{ order.insurance }}</p>
+        
+
+		</div>
+	</div>
+</div>
+{% endblock %}

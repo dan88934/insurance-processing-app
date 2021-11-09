@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Place an order
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row pb-5">
+		<div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+		<h1 class="pt-5 pb-2">Fernwood Courier Services</h1>
+        <br>
+        <h2>Search for your order by reference ID</h2>
+        {{ wtf.quick_form(form1) }}
+
+		</div>
+	</div>
+</div>
+{% endblock %}
